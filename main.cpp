@@ -10,11 +10,6 @@
 
 class HelloTriangleApplication {
 public:
-    GLFWwindow* window;
-
-    const uint32_t WIDTH = 800;
-    const uint32_t HEIGHT = 600;
-
     void run() {
         initWindow();
         initVulkan();
@@ -23,13 +18,18 @@ public:
     }
 
 private:
+    GLFWwindow* window;
+    const uint32_t WIDTH = 800;
+    const uint32_t HEIGHT = 600;
     void initWindow() {
+        glfwInit();
+        
         glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
 
         //Disabling resizeable
         glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
-        //Setting size of window
+        //Setting siz,e of window
         window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);
     }
     void initVulkan() {
