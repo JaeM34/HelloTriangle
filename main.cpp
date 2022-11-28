@@ -8,6 +8,7 @@
 class HelloTriangleApplication {
 public:
     void run() {
+        initWindow();
         initVulkan();
         mainLoop();
         cleanup();
